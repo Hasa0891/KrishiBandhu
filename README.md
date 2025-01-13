@@ -1,2 +1,2 @@
 # KrishiBandhu
-App to help Bangladeshi farmer's life easy
+App to make Bangladeshi farmer's life easy
