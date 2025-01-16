@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1"
+    tools:context=".HomeActivity">
+
+    <!-- Logo Image at the Top -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="217dp"
+        android:layout_height="238dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Text Under the Logo -->
+    <TextView
+        android:id="@+id/underLogoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="স্বাগতম কৃষি বন্ধু অ্যাপে"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Buttons for Various Sections -->
+    <Button
+        android:id="@+id/marketInfoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="বাজার তথ্য"
+        android:textSize="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/underLogoTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/techAdviceButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="প্রযুক্তিগত পরামর্শ"
+        android:textSize="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/marketInfoButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/communityButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="সদস্যদের সাথে যোগাযোগ"
+        android:textSize="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/techAdviceButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/financialSupportButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="আর্থিক সহায়তা"
+        android:textSize="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/communityButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/feedbackSupportButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="প্রতিক্রিয়া এবং সহায়তা"
+        android:textSize="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/financialSupportButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

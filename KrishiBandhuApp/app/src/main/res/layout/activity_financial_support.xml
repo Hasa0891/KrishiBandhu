@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_5"
+    tools:context=".FinancialSupportActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষকদের জন্য আর্থিক সহায়তা"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/introductionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষকদের জন্য সরকার এবং বিভিন্ন সংস্থা থেকে আর্থিক সহায়তার বিভিন্ন সুযোগ উপলব্ধ। এসব স্কিমের মাধ্যমে কৃষকরা তাদের কৃষি কার্যক্রম এবং উন্নয়ন পরিকল্পনার জন্য ঋণ, সাবসিডি, এবং অন্যান্য সহায়তা পেতে পারেন।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/schemeOneTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="১. কৃষক ঋণ স্কিম"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/schemeOneDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষকদের জন্য সহজ শর্তে ঋণ পাওয়ার সুযোগ। এই স্কিমের মাধ্যমে কৃষকরা কম সুদে ঋণ পেতে পারেন, যা তাদের ফসল উৎপাদন এবং অন্যান্য কৃষি কাজের জন্য সহায়ক।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/schemeTwoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="২. কৃষি সাবসিডি"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/schemeTwoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষকদের জন্য বিভিন্ন ধরনের কৃষি পণ্য ও যন্ত্রপাতি ক্রয়ের ক্ষেত্রে সরকারি সহায়তা। এই সাবসিডির মাধ্যমে কৃষকরা কম খরচে উন্নত মানের কৃষি সরঞ্জাম এবং সার/বীজ কিনতে সক্ষম হন।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/schemeThreeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৩. প্রাকৃতিক দুর্যোগ ক্ষতিপূরণ"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/schemeThreeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="প্রাকৃতিক দুর্যোগ, যেমন বন্যা, শুকনোকাল, বা অতি বৃষ্টির কারণে ক্ষতিগ্রস্ত কৃষকদের জন্য আর্থিক সহায়তা। এই স্কিমটি কৃষকদের দ্রুত পুনর্বাসনে সহায়ক।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/schemeFourTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৪. কৃষি শিক্ষা এবং প্রশিক্ষণ"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/schemeFourDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষকদের উন্নত প্রযুক্তি এবং আধুনিক কৃষি পদ্ধতি সম্পর্কে প্রশিক্ষণ দেওয়া। এটি কৃষকদের দক্ষতা বৃদ্ধি এবং উৎপাদনশীলতা বাড়ানোর জন্য সহায়ক।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/schemeFiveTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৫. কৃষি প্রযুক্তি সহায়তা"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/schemeFiveDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কৃষি প্রযুক্তি উন্নয়নে সহায়তা প্রদান। উন্নত বীজ, যন্ত্রপাতি, এবং কৃষি প্রযুক্তি ব্যবহার করে কৃষকদের উৎপাদনশীলতা বাড়ানো হয়।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/closingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এই আর্থিক সহায়তা স্কিমগুলি কৃষকদের আর্থিক সুরক্ষা প্রদান করে এবং তাদের জীবিকা উন্নত করতে সহায়ক। এই সব স্কিমের বিস্তারিত তথ্য পেতে কৃষকরা স্থানীয় কৃষি দফতরের সাথে যোগাযোগ করতে পারেন।"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

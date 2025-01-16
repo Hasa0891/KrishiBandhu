@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="registrationTitle" type="id" />
+    <item name="usernameField" type="id" />
+    <item name="titleTextView" type="id" />
+    <item name="marketPriceTitle" type="id" />
+    <item name="marketPrices" type="id" />
+    <item name="regionalMarketTitle" type="id" />
+    <item name="regionalMarketTrends" type="id" />
+    <item name="demandForecastsTitle" type="id" />
+    <item name="demandForecasts" type="id" />
+    <item name="priceChangeTitle" type="id" />
+    <item name="priceChangeAlerts" type="id" />
+    <item name="btnMoreInfo" type="id" />
+    <item name="contactTitle" type="id" />
+    <item name="emailInfo" type="id" />
+    <item name="phoneInfo" type="id" />
+    <item name="addressInfo" type="id" />
+    <item name="feedbackTitle" type="id" />
+    <item name="feedbackDescription" type="id" />
+    <item name="contactUsInfo" type="id" />
+</resources>
