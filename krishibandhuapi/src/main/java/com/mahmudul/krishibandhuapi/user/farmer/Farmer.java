@@ -1,6 +1,6 @@
 package com.mahmudul.krishibandhuapi.user.farmer;
 
-import com.mahmudul.krishibandhuapi.user.User;
+import com.mahmudul.krishibandhuapi.entities.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -13,7 +13,15 @@ public class Farmer extends User {
   private Long landArea;
 
   public Farmer(){}
-  public Farmer(String username, String email, String password, String role, String dob, String phone, String presentAddress, String permanentAddress, Long landArea) {
+  public Farmer(String username, 
+                String email, 
+                String password, 
+                String role, 
+                String dob, 
+                String phone, 
+                String presentAddress, 
+                String permanentAddress,
+                Long landArea) {
     super(username, email, password, role, dob, phone);
     this.presentAddress = presentAddress;
     this.permanentAddress = permanentAddress;

@@ -1,6 +1,6 @@
 package com.mahmudul.krishibandhuapi.user.admin;
 
-import com.mahmudul.krishibandhuapi.user.User;
+import com.mahmudul.krishibandhuapi.entities.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

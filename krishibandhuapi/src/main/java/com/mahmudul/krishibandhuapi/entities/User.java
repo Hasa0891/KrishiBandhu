@@ -1,4 +1,4 @@
-package com.mahmudul.krishibandhuapi.user;
+package com.mahmudul.krishibandhuapi.entities;
 
 import jakarta.persistence.*;
 
