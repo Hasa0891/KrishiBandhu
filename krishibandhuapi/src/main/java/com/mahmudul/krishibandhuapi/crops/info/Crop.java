@@ -1,9 +1,16 @@
 package com.mahmudul.krishibandhuapi.crops.info;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mahmudul.krishibandhuapi.crops.price.CropPrice;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +23,9 @@ public class Crop {
   private String type;
   private String name;
   private String description;
+
+  @OneToMany(mappedBy = "crop", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<CropPrice> prices = new ArrayList<>();
 
   public Crop(){}
 
@@ -48,4 +58,21 @@ public class Crop {
   public void setDescription(String description) {
     this.description = description;
   }
+
+  public List<CropPrice> getPrices() {
+    return prices;
+  }
+
+  public void setPrices(List<CropPrice> prices) {
+    this.prices = prices;
+  }
+
+  public void addPrice(CropPrice price){
+    this.prices.add(price);
+  }
+
+  public void removePrice(CropPrice price){
+    this.prices.remove(price);
+  }
+
 }

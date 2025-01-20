@@ -1,9 +1,13 @@
 package com.mahmudul.krishibandhuapi.crops.price;
 
+import com.mahmudul.krishibandhuapi.crops.info.Crop;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class CropPrice {
@@ -14,4 +18,50 @@ public class CropPrice {
     private String date;
     private Double price;
     private String unit;
+
+    @ManyToOne()
+    @JoinColumn(name = "crop_id", nullable = false)
+    private Crop crop;
+
+    public CropPrice() {}
+
+    public CropPrice(String date, Double price, String unit, Crop crop) {
+        this.date = date;
+        this.price = price;
+        this.unit = unit;
+        this.crop = crop;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public Crop getCrop() {
+        return crop;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public void setCrop(Crop crop) {
+        this.crop = crop;
+    }
+
 }
