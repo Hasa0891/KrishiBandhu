@@ -4,22 +4,28 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String username;
     private String email;
+    private String phone;
     private String password;
     private String role;
+    private String dob;
 
     public User(){}
 
-    public User(String username, String email, String password){
+    public User(String username, String email, String password, String role, String dob, String phone) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = role;
+        this.dob = dob;
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -42,6 +48,14 @@ public class User {
         return role;
     }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -56,5 +70,13 @@ public class User {
 
     public void setRole(String role){
         this.role = role;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setPhone(String phone){
+        this.phone = phone;
     }
 }
