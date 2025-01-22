@@ -17,8 +17,8 @@ public class Farmer extends User {
   private String permanentAddress;
   private Long landArea;
   
-  @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL)
-  private List<LoanRequest> loanRequest;
+  @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<LoanRequest> loanRequests;
 
   public Farmer(){}
   public Farmer(String username, 
@@ -60,12 +60,12 @@ public class Farmer extends User {
     this.landArea = landArea;
   }
 
-  public List<LoanRequest> getLoanRequest(){
-    return loanRequest;
+  public List<LoanRequest> getLoanRequests(){
+    return loanRequests;
   }
 
-  public void setLoanRequest(List<LoanRequest> loanRequest){
-    this.loanRequest = loanRequest;
+  public void setLoanRequest(List<LoanRequest> loanRequests){
+    this.loanRequests = loanRequests;
   }
 
 }

@@ -4,6 +4,9 @@ import com.mahmudul.krishibandhuapi.loan.offer.LoanOffer;
 import com.mahmudul.krishibandhuapi.user.farmer.Farmer;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -12,6 +15,10 @@ import jakarta.persistence.Table;
 @Table(name = "loan_requests")
 public class LoanRequest {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @ManyToOne()
     @JoinColumn(name = "loan_offer_id", nullable = false)
     private LoanOffer loanOffer;

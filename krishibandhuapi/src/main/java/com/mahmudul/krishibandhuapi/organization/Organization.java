@@ -1,6 +1,5 @@
 package com.mahmudul.krishibandhuapi.organization;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.mahmudul.krishibandhuapi.loan.offer.LoanOffer;
@@ -26,7 +25,7 @@ public class Organization {
     private String contacts;
 
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<LoanOffer> loanOffers = new ArrayList<>();
+    private List<LoanOffer> loanOffers;
 
     public Organization(){}
 
@@ -75,15 +74,5 @@ public class Organization {
 
     public void setLoanOffers(List<LoanOffer> loanOffers) {
         this.loanOffers = loanOffers;
-    }
-
-    public void addLoanOffer(LoanOffer loanOffer) {
-        loanOffers.add(loanOffer);
-        loanOffer.setOrganization(this);
-    }
-
-    public void removeLoanOffer(LoanOffer loanOffer) {
-        loanOffers.remove(loanOffer);
-        loanOffer.setOrganization(null);
     }
 }

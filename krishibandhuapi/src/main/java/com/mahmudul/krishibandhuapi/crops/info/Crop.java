@@ -1,6 +1,5 @@
 package com.mahmudul.krishibandhuapi.crops.info;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.mahmudul.krishibandhuapi.crops.price.CropPrice;
@@ -25,7 +24,7 @@ public class Crop {
   private String description;
 
   @OneToMany(mappedBy = "crop", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<CropPrice> prices = new ArrayList<>();
+  private List<CropPrice> prices;
 
   public Crop(){}
 
@@ -65,16 +64,6 @@ public class Crop {
 
   public void setPrices(List<CropPrice> prices) {
     this.prices = prices;
-  }
-
-  public void addPrice(CropPrice price){
-    this.prices.add(price);
-    price.setCrop(this);
-  }
-
-  public void removePrice(CropPrice price){
-    this.prices.remove(price);
-    price.setCrop(null);
   }
 
 }
