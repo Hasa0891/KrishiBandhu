@@ -1,8 +1,13 @@
 package com.mahmudul.krishibandhuapi.user.farmer;
 
-import com.mahmudul.krishibandhuapi.entities.User;
+import java.util.List;
 
+import com.mahmudul.krishibandhuapi.entities.User;
+import com.mahmudul.krishibandhuapi.loan.request.LoanRequest;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,6 +16,9 @@ public class Farmer extends User {
   private String presentAddress;
   private String permanentAddress;
   private Long landArea;
+  
+  @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL)
+  private List<LoanRequest> loanRequest;
 
   public Farmer(){}
   public Farmer(String username, 
@@ -50,6 +58,14 @@ public class Farmer extends User {
 
   public void setLandArea(Long landArea){
     this.landArea = landArea;
+  }
+
+  public List<LoanRequest> getLoanRequest(){
+    return loanRequest;
+  }
+
+  public void setLoanRequest(List<LoanRequest> loanRequest){
+    this.loanRequest = loanRequest;
   }
 
 }

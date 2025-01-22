@@ -69,10 +69,12 @@ public class Crop {
 
   public void addPrice(CropPrice price){
     this.prices.add(price);
+    price.setCrop(this);
   }
 
   public void removePrice(CropPrice price){
     this.prices.remove(price);
+    price.setCrop(null);
   }
 
 }
