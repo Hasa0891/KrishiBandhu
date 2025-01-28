@@ -1,5 +1,7 @@
 package com.mahmudul.krishibandhuapi.posts;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,11 +18,11 @@ public class Post {
   private String heading;
   private String tags;
   private String description;
-  private String dateTime;
+  private LocalDateTime dateTime;
 
   public Post() {}
 
-  public Post(String heading, String tags, String description, String dateTime) {
+  public Post(String heading, String tags, String description, LocalDateTime dateTime) {
     this.heading = heading;
     this.tags = tags;
     this.description = description;
@@ -39,7 +41,7 @@ public class Post {
     return description;
   }
 
-  public String getDateTime() {
+  public LocalDateTime getDateTime() {
     return dateTime;
   }
 
@@ -55,7 +57,7 @@ public class Post {
     this.description = description;
   }
 
-  public void setDateTime(String dateTime) {
+  public void setDateTime(LocalDateTime dateTime) {
     this.dateTime = dateTime;
   }
 }

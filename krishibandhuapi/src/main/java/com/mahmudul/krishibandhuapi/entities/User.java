@@ -1,5 +1,7 @@
 package com.mahmudul.krishibandhuapi.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -15,11 +17,11 @@ public abstract class User {
     private String phone;
     private String password;
     private String role;
-    private String dob;
+    private LocalDate dob;
 
     public User(){}
 
-    public User(String username, String email, String password, String role, String dob, String phone) {
+    public User(String username, String email, String password, String role, LocalDate dob, String phone) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -48,7 +50,7 @@ public abstract class User {
         return role;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
@@ -72,7 +74,7 @@ public abstract class User {
         this.role = role;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 

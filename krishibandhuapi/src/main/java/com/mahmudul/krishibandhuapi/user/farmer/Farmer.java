@@ -1,5 +1,6 @@
 package com.mahmudul.krishibandhuapi.user.farmer;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.mahmudul.krishibandhuapi.entities.User;
@@ -25,7 +26,7 @@ public class Farmer extends User {
                 String email, 
                 String password, 
                 String role, 
-                String dob, 
+                LocalDate dob, 
                 String phone, 
                 String presentAddress, 
                 String permanentAddress,

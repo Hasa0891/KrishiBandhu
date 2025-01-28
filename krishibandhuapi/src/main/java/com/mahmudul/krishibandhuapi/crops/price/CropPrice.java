@@ -1,5 +1,7 @@
 package com.mahmudul.krishibandhuapi.crops.price;
 
+import java.time.LocalDateTime;
+
 import com.mahmudul.krishibandhuapi.crops.info.Crop;
 
 import jakarta.persistence.Entity;
@@ -15,7 +17,7 @@ public class CropPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String date;
+    private LocalDateTime date;
     private Double price;
     private String unit;
 
@@ -25,14 +27,14 @@ public class CropPrice {
 
     public CropPrice() {}
 
-    public CropPrice(String date, Double price, String unit, Crop crop) {
+    public CropPrice(LocalDateTime date, Double price, String unit, Crop crop) {
         this.date = date;
         this.price = price;
         this.unit = unit;
         this.crop = crop;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
@@ -48,7 +50,7 @@ public class CropPrice {
         return crop;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

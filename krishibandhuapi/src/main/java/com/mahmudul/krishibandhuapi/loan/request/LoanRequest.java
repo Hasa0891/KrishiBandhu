@@ -1,5 +1,7 @@
 package com.mahmudul.krishibandhuapi.loan.request;
 
+import java.time.LocalDateTime;
+
 import com.mahmudul.krishibandhuapi.loan.offer.LoanOffer;
 import com.mahmudul.krishibandhuapi.user.farmer.Farmer;
 
@@ -27,12 +29,12 @@ public class LoanRequest {
     @JoinColumn(name = "farmer_id", referencedColumnName = "id")
     private Farmer farmer;
     
-    private String requestDate;
-    private String updateDate;
+    private LocalDateTime requestDate;
+    private LocalDateTime updateDate;
     private String status;
 
     public LoanRequest() {}
-    public LoanRequest(String requestDate, String updateDate, String status, LoanOffer loanOffer, Farmer farmer) {
+    public LoanRequest(LocalDateTime requestDate, LocalDateTime updateDate, String status, LoanOffer loanOffer, Farmer farmer) {
         this.requestDate = requestDate;
         this.updateDate = updateDate;
         this.status = status;
@@ -40,19 +42,19 @@ public class LoanRequest {
         this.farmer = farmer;
     }
 
-    public String getRequestDate(){
+    public LocalDateTime getRequestDate(){
         return requestDate;
     }
 
-    public void setRequestDate(String requestDate){
+    public void setRequestDate(LocalDateTime requestDate){
         this.requestDate = requestDate;
     }
 
-    public String getUpdateDate(){
+    public LocalDateTime getUpdateDate(){
         return updateDate;
     }
 
-    public void setUpdateDate(String updateDate){
+    public void setUpdateDate(LocalDateTime updateDate){
         this.updateDate = updateDate;
     }
 
