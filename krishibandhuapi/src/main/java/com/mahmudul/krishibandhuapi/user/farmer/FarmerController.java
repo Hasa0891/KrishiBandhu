@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("/user/farmers")
+@RequestMapping("/users/farmers")
 public class FarmerController {
 
     @PostMapping("/create")
