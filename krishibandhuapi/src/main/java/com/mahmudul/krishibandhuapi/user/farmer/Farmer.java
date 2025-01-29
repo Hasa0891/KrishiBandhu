@@ -16,25 +16,27 @@ import jakarta.persistence.Table;
 public class Farmer extends User {
   private String presentAddress;
   private String permanentAddress;
-  private Long landArea;
+  private Double landArea;
   
   @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<LoanRequest> loanRequests;
 
   public Farmer(){}
-  public Farmer(String username, 
-                String email, 
-                String password, 
-                String role, 
-                LocalDate dob, 
-                String phone, 
-                String presentAddress, 
-                String permanentAddress,
-                Long landArea) {
-    super(username, email, password, role, dob, phone);
-    this.presentAddress = presentAddress;
-    this.permanentAddress = permanentAddress;
-    this.landArea = landArea;
+  public Farmer(
+    String username, 
+    String email, 
+    String password, 
+    String role, 
+    LocalDate dob, 
+    String phone, 
+    String presentAddress, 
+    String permanentAddress,
+    Double landArea
+    ) {
+      super(username, email, password, role, dob, phone);
+      this.presentAddress = presentAddress;
+      this.permanentAddress = permanentAddress;
+      this.landArea = landArea;
   }
 
   public String getPresentAddress(){
@@ -45,7 +47,7 @@ public class Farmer extends User {
     return permanentAddress;
   }
 
-  public Long getLandArea(){
+  public Double getLandArea(){
     return landArea;
   }
 
@@ -57,7 +59,7 @@ public class Farmer extends User {
     this.permanentAddress = permanentAddress;
   }
 
-  public void setLandArea(Long landArea){
+  public void setLandArea(Double landArea){
     this.landArea = landArea;
   }
 

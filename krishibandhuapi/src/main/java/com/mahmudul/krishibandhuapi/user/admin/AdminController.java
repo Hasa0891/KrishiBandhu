@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Validated
 public class AdminController {
 
+    AdminRepository adminRepository;
+
     @PostMapping("/create")
     public ResponseEntity<String> createAdmin(@Valid @RequestBody AdminDTO admin) {
         return ResponseEntity.ok("{message : Admin Account Created}");

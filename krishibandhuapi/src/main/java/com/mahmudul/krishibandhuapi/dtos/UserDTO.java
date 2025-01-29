@@ -3,6 +3,7 @@ package com.mahmudul.krishibandhuapi.dtos;
 import com.mahmudul.krishibandhuapi.enums.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -23,10 +24,10 @@ public abstract class UserDTO {
     @Size(min=6,message="Password must be at least 6 characters long")
     private String password;
 
-    @NotBlank(message = "Role is required")
+    @NotNull(message = "Role is required")
     private UserRole role;
 
-    @NotBlank(message = "Date of Birth is required")
+    @NotNull(message = "Date of Birth is required")
     private LocalDate dob;
 
     public UserDTO(String username, String email, String password, UserRole role, LocalDate dob, String phone) {

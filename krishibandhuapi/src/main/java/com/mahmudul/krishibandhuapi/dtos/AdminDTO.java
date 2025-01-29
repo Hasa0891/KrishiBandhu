@@ -2,14 +2,15 @@ package com.mahmudul.krishibandhuapi.dtos;
 
 import com.mahmudul.krishibandhuapi.enums.AdminResponsibility;
 import com.mahmudul.krishibandhuapi.enums.UserRole;
+import com.mahmudul.krishibandhuapi.user.admin.Admin;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
 public class AdminDTO extends UserDTO {
 
-  @NotBlank(message = "Responsibility is required")
+  @NotNull(message = "Responsibility is required")
   private AdminResponsibility responsibility;
 
   public AdminDTO(
@@ -31,5 +32,17 @@ public class AdminDTO extends UserDTO {
 
   public void setResponsibility(AdminResponsibility responsibility) {
       this.responsibility = responsibility;
+  }
+
+  public Admin toAdminEntity() {  
+    Admin admin = new Admin();
+    admin.setUsername(this.getUsername());
+    admin.setEmail(this.getEmail());
+    admin.setPassword(this.getPassword());
+    admin.setRole(this.getRole().toString());
+    admin.setDob(this.getDob());
+    admin.setPhone(this.getPhone());
+    admin.setResponsibility(this.getResponsibility().toString());
+    return admin;
   }
 }
