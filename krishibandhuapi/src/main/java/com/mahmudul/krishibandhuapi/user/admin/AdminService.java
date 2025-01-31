@@ -1,8 +1,8 @@
 package com.mahmudul.krishibandhuapi.user.admin;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
+
+import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException;
 
 @Service
 public class AdminService {
@@ -17,30 +17,29 @@ public class AdminService {
         return adminRepository.save(admin);
     }
 
-    public Optional<Admin> getAdmin(Long adminId){
-        return adminRepository.findById(adminId);
+    public Admin getAdmin(Long adminId){
+        return adminRepository.findById(adminId)
+        .map(user -> {
+            return user;
+        })
+        .orElseThrow(() -> new AdminNotFoundException("Admin Not Found with Id : " + adminId));
     }
 
-    public Optional<Admin> modifyAdmin(Long id, Admin newAdmin){
-        Optional<Admin> adminFound = adminRepository.findById(id);
-        
-        if(adminFound.isPresent()){
-            Admin admin = adminFound.get();
+    public Admin modifyAdmin(Long adminId, Admin newAdmin){
+        return adminRepository.findById(adminId)
+        .map(admin -> {
             admin.setDob(newAdmin.getDob());
             admin.setPhone(newAdmin.getPhone());
             admin.setResponsibility(newAdmin.getResponsibility());
-            return Optional.of(adminRepository.save(admin));
-        }
-
-        return adminFound;
+            return admin;
+        })
+        .orElseThrow(() -> new AdminNotFoundException("Admin Not Found with Id : " + adminId));
     }
 
-    public Boolean deleteAdmin(Long id){
-        if(adminRepository.existsById(id)){
-            adminRepository.deleteById(id);
-            return true;
-        } else {
-            return false;
+    public void deleteAdmin(Long adminId){
+        if(!adminRepository.existsById(adminId)){
+            throw new AdminNotFoundException("Admin Not Found with Id : " + adminId);
         }
+        adminRepository.deleteById(adminId);
     }
 }

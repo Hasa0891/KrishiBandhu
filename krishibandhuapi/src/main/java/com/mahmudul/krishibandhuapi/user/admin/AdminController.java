@@ -10,8 +10,6 @@ import jakarta.validation.Valid;
 
 import java.net.URI;
 
-import java.util.Optional;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,23 +44,20 @@ public class AdminController {
     }
 
     @GetMapping("/{adminId}")
-    public ResponseEntity<?> getAdmin(@PathVariable("adminId") Long adminId) {
-        Optional<Admin> admin = adminService.getAdmin(adminId);
-        return admin.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<Admin> getAdmin(@PathVariable("adminId") Long adminId) {
+        Admin admin = adminService.getAdmin(adminId);
+        return ResponseEntity.ok(admin);
     }
 
     @PutMapping("/{adminId}")
     public ResponseEntity<Admin> updateAdmin(@Valid @RequestBody AdminDTO adminDto, @PathVariable Long adminId) {
-        Optional<Admin> admin = adminService.modifyAdmin(adminId, adminDto.toAdminEntity());
-        return admin.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        Admin admin = adminService.modifyAdmin(adminId, adminDto.toAdminEntity());
+        return ResponseEntity.ok(admin);
     }
     
     @DeleteMapping("/{adminId}")
     public ResponseEntity<Void> deleteAdmin(@PathVariable Long adminId) {
-        Boolean deleted = adminService.deleteAdmin(adminId);
-        if(deleted){
-            return ResponseEntity.noContent().build();
-        }
+        adminService.deleteAdmin(adminId);
         return ResponseEntity.notFound().build();
     }
 }
