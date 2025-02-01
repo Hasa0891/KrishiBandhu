@@ -19,9 +19,6 @@ public class AdminService {
 
     public Admin getAdmin(Long adminId){
         return adminRepository.findById(adminId)
-        .map(user -> {
-            return user;
-        })
         .orElseThrow(() -> new AdminNotFoundException("Admin Not Found with Id : " + adminId));
     }
 
@@ -31,7 +28,7 @@ public class AdminService {
             admin.setDob(newAdmin.getDob());
             admin.setPhone(newAdmin.getPhone());
             admin.setResponsibility(newAdmin.getResponsibility());
-            return admin;
+            return adminRepository.save(admin);
         })
         .orElseThrow(() -> new AdminNotFoundException("Admin Not Found with Id : " + adminId));
     }

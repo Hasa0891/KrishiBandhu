@@ -3,8 +3,10 @@ package com.mahmudul.krishibandhuapi.dtos;
 import java.time.LocalDate;
 
 import com.mahmudul.krishibandhuapi.enums.UserRole;
+import com.mahmudul.krishibandhuapi.user.farmer.Farmer;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 public class FarmerDTO extends UserDTO {
@@ -15,6 +17,7 @@ public class FarmerDTO extends UserDTO {
     @NotBlank(message = "Permanent Address is required")
     private String permanentAddress;
     
+    @NotNull(message = "Land Area is required")
     @Positive(message = "Land Area must be positive")
     private Double landArea;
 
@@ -57,5 +60,19 @@ public class FarmerDTO extends UserDTO {
 
     public void setLandArea(Double landArea){
         this.landArea = landArea;
+    }
+
+    public Farmer toFarmerEntity(){
+        Farmer farmer = new Farmer();
+        farmer.setUsername(this.getUsername());
+        farmer.setEmail(this.getEmail());
+        farmer.setPassword(this.getPassword());
+        farmer.setRole(this.getRole().toString());
+        farmer.setDob(this.getDob());
+        farmer.setPhone(this.getPhone());
+        farmer.setPresentAddress(this.getPresentAddress());
+        farmer.setPermanentAddress(this.getPermanentAddress());
+        farmer.setLandArea(this.getLandArea());
+        return farmer;
     }
 }
