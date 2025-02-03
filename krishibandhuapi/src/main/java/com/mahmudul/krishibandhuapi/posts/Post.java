@@ -7,9 +7,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "posts")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Post {
   
   @Id
@@ -20,8 +28,6 @@ public class Post {
   private String description;
   private LocalDateTime dateTime;
 
-  public Post() {}
-
   public Post(String heading, String tags, String description, LocalDateTime dateTime) {
     this.heading = heading;
     this.tags = tags;
@@ -29,35 +35,4 @@ public class Post {
     this.dateTime = dateTime;
   }
 
-  public String getHeading() {
-    return heading;
-  }
-
-  public String getTags() {
-    return tags;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public LocalDateTime getDateTime() {
-    return dateTime;
-  }
-
-  public void setHeading(String heading) {
-    this.heading = heading;
-  }
-
-  public void setTags(String tags) {
-    this.tags = tags;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public void setDateTime(LocalDateTime dateTime) {
-    this.dateTime = dateTime;
-  }
 }

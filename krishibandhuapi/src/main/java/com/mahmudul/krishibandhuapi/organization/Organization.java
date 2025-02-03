@@ -11,9 +11,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "organizations")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Organization {
     
     @Id
@@ -27,8 +35,6 @@ public class Organization {
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LoanOffer> loanOffers;
 
-    public Organization(){}
-
     public Organization(String name, String description, String address, String contacts) {
         this.name = name;
         this.description = description;
@@ -36,43 +42,4 @@ public class Organization {
         this.contacts = contacts;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getContacts() {
-        return contacts;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setContacts(String contacts) {
-        this.contacts = contacts;
-    }
-
-    public List<LoanOffer> getLoanOffers() {
-        return loanOffers;
-    }
-
-    public void setLoanOffers(List<LoanOffer> loanOffers) {
-        this.loanOffers = loanOffers;
-    }
 }

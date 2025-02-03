@@ -5,9 +5,15 @@ import com.mahmudul.krishibandhuapi.enums.UserRole;
 import com.mahmudul.krishibandhuapi.user.admin.Admin;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
+@Setter
+@Getter
+@ToString
 public class AdminDTO extends UserDTO {
 
   @NotNull(message = "Responsibility is required")
@@ -23,14 +29,6 @@ public class AdminDTO extends UserDTO {
     AdminResponsibility responsibility
   ) {
       super(username,email,password,role,dob,phone);
-      this.responsibility = responsibility;
-  }
-
-  public AdminResponsibility getResponsibility() {
-      return responsibility;
-  }
-
-  public void setResponsibility(AdminResponsibility responsibility) {
       this.responsibility = responsibility;
   }
 

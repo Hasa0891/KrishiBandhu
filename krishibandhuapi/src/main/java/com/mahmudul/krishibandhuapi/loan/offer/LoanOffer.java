@@ -9,9 +9,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "loan_offers")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class LoanOffer {
     
     @Id
@@ -26,7 +34,6 @@ public class LoanOffer {
     @JoinColumn(name = "organization_id", nullable = false)
     private Organization organization;
 
-    public LoanOffer() {}
     public LoanOffer(String name, String description, String terms, Double amount, Organization organization) {
         this.name = name;
         this.description = description;
@@ -35,43 +42,4 @@ public class LoanOffer {
         this.organization = organization;
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getDescription(){
-        return description;
-    }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public String getTerms(){
-        return terms;
-    }
-
-    public void setTerms(String terms){
-        this.terms = terms;
-    }
-
-    public Double getAmount(){
-        return amount;
-    }
-
-    public void setAmount(Double amount){
-        this.amount = amount;
-    }
-
-    public Organization getOrganization(){
-        return organization;
-    }
-
-    public void setOrganization(Organization organization){
-        this.organization = organization;
-    }
 }

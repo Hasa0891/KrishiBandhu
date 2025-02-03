@@ -10,9 +10,17 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "farmers")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Farmer extends User {
   private String presentAddress;
   private String permanentAddress;
@@ -21,7 +29,6 @@ public class Farmer extends User {
   @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<LoanRequest> loanRequests;
 
-  public Farmer(){}
   public Farmer(
     String username, 
     String email, 
@@ -38,37 +45,4 @@ public class Farmer extends User {
       this.permanentAddress = permanentAddress;
       this.landArea = landArea;
   }
-
-  public String getPresentAddress(){
-    return presentAddress;
-  }
-
-  public String getPermanentAddress(){
-    return permanentAddress;
-  }
-
-  public Double getLandArea(){
-    return landArea;
-  }
-
-  public void setPresentAddress(String presentAddress){
-    this.presentAddress = presentAddress;
-  }
-
-  public void setPermanentAddress(String permanentAddress){
-    this.permanentAddress = permanentAddress;
-  }
-
-  public void setLandArea(Double landArea){
-    this.landArea = landArea;
-  }
-
-  public List<LoanRequest> getLoanRequests(){
-    return loanRequests;
-  }
-
-  public void setLoanRequest(List<LoanRequest> loanRequests){
-    this.loanRequests = loanRequests;
-  }
-
 }

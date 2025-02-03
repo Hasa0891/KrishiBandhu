@@ -8,7 +8,13 @@ import com.mahmudul.krishibandhuapi.user.farmer.Farmer;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Setter
+@Getter
+@ToString
 public class FarmerDTO extends UserDTO {
     
     @NotBlank(message = "Present Address is required")
@@ -35,30 +41,6 @@ public class FarmerDTO extends UserDTO {
         super(username, email, password, role, dob, phone);
         this.presentAddress = presentAddress;
         this.permanentAddress = permanentAddress;
-        this.landArea = landArea;
-    }
-    
-    public String getPresentAddress(){
-        return presentAddress;
-    }
-
-    public String getPermanentAddress(){
-        return permanentAddress;
-    }
-
-    public Double getLandArea(){
-        return landArea;
-    }
-
-    public void setPresentAddress(String presentAddress){
-        this.presentAddress = presentAddress;
-    }
-
-    public void setPermanentAddress(String permanentAddress){
-        this.permanentAddress = permanentAddress;
-    }
-
-    public void setLandArea(Double landArea){
         this.landArea = landArea;
     }
 

@@ -10,8 +10,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@Table(name = "crop_price")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class CropPrice {
 
     @Id
@@ -25,44 +35,10 @@ public class CropPrice {
     @JoinColumn(name = "crop_id", nullable = false)
     private Crop crop;
 
-    public CropPrice() {}
-
     public CropPrice(LocalDateTime date, Double price, String unit, Crop crop) {
         this.date = date;
         this.price = price;
         this.unit = unit;
-        this.crop = crop;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public Crop getCrop() {
-        return crop;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public void setCrop(Crop crop) {
         this.crop = crop;
     }
 

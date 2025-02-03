@@ -12,9 +12,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "loan_requests")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class LoanRequest {
     
     @Id
@@ -33,52 +41,11 @@ public class LoanRequest {
     private LocalDateTime updateDate;
     private String status;
 
-    public LoanRequest() {}
     public LoanRequest(LocalDateTime requestDate, LocalDateTime updateDate, String status, LoanOffer loanOffer, Farmer farmer) {
         this.requestDate = requestDate;
         this.updateDate = updateDate;
         this.status = status;
         this.loanOffer = loanOffer;
-        this.farmer = farmer;
-    }
-
-    public LocalDateTime getRequestDate(){
-        return requestDate;
-    }
-
-    public void setRequestDate(LocalDateTime requestDate){
-        this.requestDate = requestDate;
-    }
-
-    public LocalDateTime getUpdateDate(){
-        return updateDate;
-    }
-
-    public void setUpdateDate(LocalDateTime updateDate){
-        this.updateDate = updateDate;
-    }
-
-    public String getStatus(){
-        return status;
-    }
-
-    public void setStatus(String status){
-        this.status = status;
-    }
-
-    public LoanOffer getLoanOffer(){
-        return loanOffer;
-    }
-
-    public void setLoanOffer(LoanOffer loanOffer){
-        this.loanOffer = loanOffer;
-    }
-
-    public Farmer getFarmer(){
-        return farmer;
-    }
-
-    public void setFarmer(Farmer farmer){
         this.farmer = farmer;
     }
 
