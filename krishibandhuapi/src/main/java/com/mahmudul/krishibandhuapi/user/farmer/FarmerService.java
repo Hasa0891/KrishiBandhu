@@ -1,5 +1,6 @@
 package com.mahmudul.krishibandhuapi.user.farmer;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mahmudul.krishibandhuapi.exceptions.user.farmer.FarmerNotFoundException;
@@ -7,12 +8,15 @@ import com.mahmudul.krishibandhuapi.exceptions.user.farmer.FarmerNotFoundExcepti
 @Service
 public class FarmerService {
     private FarmerRepository farmerRepository;
+    private PasswordEncoder passwordEncoder;
 
-    public FarmerService(FarmerRepository farmerRepository){
+    public FarmerService(FarmerRepository farmerRepository, PasswordEncoder passwordEncoder){
         this.farmerRepository = farmerRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public Farmer createFarmer(Farmer farmer){
+        farmer.setPassword(passwordEncoder.encode(farmer.getPassword()));
         return farmerRepository.save(farmer);
     }
 

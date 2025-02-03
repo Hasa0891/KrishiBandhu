@@ -1,5 +1,6 @@
 package com.mahmudul.krishibandhuapi.user.admin;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException;
@@ -8,12 +9,15 @@ import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException
 public class AdminService {
     
     private AdminRepository adminRepository;
+    private PasswordEncoder passwordEncoder;
 
-    public AdminService(AdminRepository adminRepository){
+    public AdminService(AdminRepository adminRepository, PasswordEncoder passwordEncoder){
         this.adminRepository = adminRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public Admin createAdmin(Admin admin){
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         return adminRepository.save(admin);
     }
 
