@@ -20,7 +20,6 @@ public class AdminDTO extends UserDTO {
   private AdminResponsibility responsibility;
 
   public AdminDTO(
-    String username,
     String email, 
     String password, 
     UserRole role, 
@@ -28,13 +27,12 @@ public class AdminDTO extends UserDTO {
     String phone,
     AdminResponsibility responsibility
   ) {
-      super(username,email,password,role,dob,phone);
+      super(email,password,role,dob,phone);
       this.responsibility = responsibility;
   }
 
   public Admin toAdminEntity() {  
     Admin admin = new Admin();
-    admin.setUsername(this.getUsername());
     admin.setEmail(this.getEmail());
     admin.setPassword(this.getPassword());
     admin.setRole(this.getRole().toString());

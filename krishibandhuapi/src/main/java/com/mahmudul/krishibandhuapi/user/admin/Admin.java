@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import com.mahmudul.krishibandhuapi.entities.User;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,5 +33,10 @@ public class Admin extends User {
   ) {
     super(username, email, password, role, dob, phone);
     this.responsibility = responsibility;
+  }
+
+  @PrePersist
+  public void generateAdminUserName(){
+    this.setUsername("ADMIN_" + System.currentTimeMillis());
   }
 }

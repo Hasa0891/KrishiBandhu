@@ -9,6 +9,7 @@ import com.mahmudul.krishibandhuapi.loan.request.LoanRequest;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,5 +45,10 @@ public class Farmer extends User {
       this.presentAddress = presentAddress;
       this.permanentAddress = permanentAddress;
       this.landArea = landArea;
+  }
+
+  @PrePersist
+  public void generateFarmerUserName(){
+    this.setUsername("FARMER_" + System.currentTimeMillis());
   }
 }

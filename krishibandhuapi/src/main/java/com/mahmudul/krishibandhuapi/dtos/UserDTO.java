@@ -16,10 +16,6 @@ import java.time.LocalDate;
 @ToString
 public abstract class UserDTO {
 
-    @NotBlank(message = "Username is required")
-    @Size(min = 6, max = 20)
-    private String username;
-
     @Email(message = "Please provide a valid email address")
     @NotBlank(message = "Email is required")
     private String email;
@@ -36,8 +32,7 @@ public abstract class UserDTO {
     @NotNull(message = "Date of Birth is required")
     private LocalDate dob;
 
-    public UserDTO(String username, String email, String password, UserRole role, LocalDate dob, String phone) {
-        this.username = username;
+    public UserDTO(String email, String password, UserRole role, LocalDate dob, String phone) {
         this.email = email;
         this.password = password;
         this.role = role;

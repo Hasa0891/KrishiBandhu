@@ -28,7 +28,6 @@ public class FarmerDTO extends UserDTO {
     private Double landArea;
 
     public FarmerDTO(
-        String username, 
         String email, 
         String password, 
         UserRole role, 
@@ -38,7 +37,7 @@ public class FarmerDTO extends UserDTO {
         String permanentAddress,
         Double landArea
     ){
-        super(username, email, password, role, dob, phone);
+        super(email, password, role, dob, phone);
         this.presentAddress = presentAddress;
         this.permanentAddress = permanentAddress;
         this.landArea = landArea;
@@ -46,7 +45,6 @@ public class FarmerDTO extends UserDTO {
 
     public Farmer toFarmerEntity(){
         Farmer farmer = new Farmer();
-        farmer.setUsername(this.getUsername());
         farmer.setEmail(this.getEmail());
         farmer.setPassword(this.getPassword());
         farmer.setRole(this.getRole().toString());
