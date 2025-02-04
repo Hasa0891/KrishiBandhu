@@ -1,0 +1,42 @@
+package com.mahmudul.krishibandhuapi.crops.info;
+
+import org.springframework.stereotype.Service;
+
+import com.mahmudul.krishibandhuapi.exceptions.crops.CropNotFoundException;
+
+@Service
+public class CropsInfoService {
+
+    private CropsInfoRepository cropsInfoRepository;
+
+    public CropsInfoService(CropsInfoRepository cropsInfoRepository){
+        this.cropsInfoRepository = cropsInfoRepository;
+    }
+
+    public Crop createCropInfo(Crop crop){
+        return cropsInfoRepository.save(crop);
+    }
+
+    public Crop getCrop(Long cropId){
+        return cropsInfoRepository.findById(cropId)
+        .orElseThrow(() -> new CropNotFoundException("Crop Not Found With Id : " + cropId));
+    }
+
+    public Crop modifyCrop(Crop nwCrop, Long cropId){
+        return cropsInfoRepository.findById(cropId)
+        .map(crop -> {
+            crop.setType(nwCrop.getType());
+            crop.setName(nwCrop.getName());
+            crop.setDescription(nwCrop.getDescription());
+            return cropsInfoRepository.save(crop);
+        })
+        .orElseThrow(() -> new CropNotFoundException("Crop Not Found With Id : " + cropId));
+    }
+
+    public void deleteCrop(Long cropId){
+        if(!cropsInfoRepository.existsById(cropId)){
+            throw new CropNotFoundException("Crop Not Found With Id : " + cropId);
+        }
+        cropsInfoRepository.deleteById(cropId);;
+    }
+}
