@@ -1,7 +1,12 @@
 package com.mahmudul.krishibandhuapi.crops.info;
 
+import java.util.Comparator;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import com.mahmudul.krishibandhuapi.crops.price.CropPrice;
+import com.mahmudul.krishibandhuapi.dtos.CropWithPrice;
 import com.mahmudul.krishibandhuapi.exceptions.crops.CropNotFoundException;
 
 @Service
@@ -20,6 +25,23 @@ public class CropsInfoService {
     public Crop getCrop(Long cropId){
         return cropsInfoRepository.findById(cropId)
         .orElseThrow(() -> new CropNotFoundException("Crop Not Found With Id : " + cropId));
+    }
+
+    public List<CropWithPrice> getCropsWithLatestPrice(){
+        List<Crop> crops = cropsInfoRepository.findAll();
+
+        return crops.stream().map(crop -> {
+            CropPrice latestPrice = crop.getPrices()
+                                    .stream()
+                                    .max(Comparator.comparing(CropPrice::getDate))
+                                    .orElse(null);
+            return new CropWithPrice(
+                crop.getId(), 
+                crop.getName(),
+                latestPrice != null ? latestPrice.getPrice() : null,
+                latestPrice != null ? latestPrice.getUnit() : null
+            );
+        }).toList();
     }
 
     public Crop modifyCrop(Crop nwCrop, Long cropId){

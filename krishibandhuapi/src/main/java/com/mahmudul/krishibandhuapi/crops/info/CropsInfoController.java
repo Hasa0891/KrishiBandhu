@@ -4,10 +4,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.mahmudul.krishibandhuapi.dtos.CropDTO;
+import com.mahmudul.krishibandhuapi.dtos.CropWithPrice;
 
 import jakarta.validation.Valid;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +46,12 @@ public class CropsInfoController {
     public ResponseEntity<Crop> getCrop(@PathVariable Long cropId) {
         Crop crop = cropsInfoService.getCrop(cropId);
         return ResponseEntity.ok(crop);
+    }
+
+    @GetMapping("/prices")
+    public ResponseEntity<List<CropWithPrice>> getCrops(){
+        List<CropWithPrice> crops = cropsInfoService.getCropsWithLatestPrice();
+        return ResponseEntity.ok(crops);
     }
     
     @PutMapping("/{cropId}")
