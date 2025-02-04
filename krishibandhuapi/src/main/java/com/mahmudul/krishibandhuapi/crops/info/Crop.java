@@ -2,6 +2,7 @@ package com.mahmudul.krishibandhuapi.crops.info;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mahmudul.krishibandhuapi.crops.price.CropPrice;
 
 import jakarta.persistence.CascadeType;
@@ -32,6 +33,7 @@ public class Crop {
   private String description;
 
   @OneToMany(mappedBy = "crop", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
   private List<CropPrice> prices;
 
   public Crop(String type, String name, String description) {

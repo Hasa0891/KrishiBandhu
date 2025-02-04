@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.mahmudul.krishibandhuapi.exceptions.crops.CropNotFoundException;
+import com.mahmudul.krishibandhuapi.exceptions.crops.CropsPriceNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.user.farmer.FarmerNotFoundException;
 
@@ -52,6 +53,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(CropNotFoundException.class)
     public ResponseEntity<Map<String,Object>> handleCropNotFoundException(CropNotFoundException ex){
+        Map<String,Object> errRS = new HashMap<>();
+        errRS.put("timestamp", LocalDateTime.now());
+        errRS.put("status", HttpStatus.NOT_FOUND.value());
+        errRS.put("error", "Not Found");
+        errRS.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errRS);
+    }
+
+    @ExceptionHandler(CropsPriceNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleCropsPriceNotFoundException(CropsPriceNotFoundException ex){
         Map<String,Object> errRS = new HashMap<>();
         errRS.put("timestamp", LocalDateTime.now());
         errRS.put("status", HttpStatus.NOT_FOUND.value());

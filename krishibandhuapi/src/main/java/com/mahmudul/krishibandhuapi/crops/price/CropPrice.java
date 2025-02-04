@@ -2,6 +2,7 @@ package com.mahmudul.krishibandhuapi.crops.price;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
 import com.mahmudul.krishibandhuapi.crops.info.Crop;
 
 import jakarta.persistence.Entity;
@@ -27,7 +28,10 @@ public class CropPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @CreationTimestamp
     private LocalDateTime date;
+
     private Double price;
     private String unit;
 
