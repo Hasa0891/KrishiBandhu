@@ -2,6 +2,8 @@ package com.mahmudul.krishibandhuapi.posts;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,13 +28,14 @@ public class Post {
   private String heading;
   private String tags;
   private String description;
+
+  @CreationTimestamp
   private LocalDateTime dateTime;
 
-  public Post(String heading, String tags, String description, LocalDateTime dateTime) {
+  public Post(String heading, String tags, String description) {
     this.heading = heading;
     this.tags = tags;
     this.description = description;
-    this.dateTime = dateTime;
   }
 
 }
