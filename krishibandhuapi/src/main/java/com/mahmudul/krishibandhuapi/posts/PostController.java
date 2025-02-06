@@ -1,5 +1,7 @@
 package com.mahmudul.krishibandhuapi.posts;
 
+import java.net.URI;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.mahmudul.krishibandhuapi.dtos.PostDTO;
 
@@ -28,8 +31,15 @@ public class PostController {
 
     @PostMapping("/")
     public ResponseEntity<Post> createPost(@Valid @RequestBody PostDTO postDTO){
+        
         Post post = postService.createPost(postDTO.toPostEntity());
-        return ResponseEntity.ok(post);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                        .path("/{id}")
+                        .buildAndExpand(post.getId())
+                        .toUri();
+
+        return ResponseEntity.created(location).body(post);
     }
 
     @GetMapping("/{postId}")

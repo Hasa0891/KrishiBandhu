@@ -1,5 +1,6 @@
 package com.mahmudul.krishibandhuapi.loan.request;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.mahmudul.krishibandhuapi.dtos.LoanRequestDTO;
 
@@ -30,7 +32,13 @@ public class LoanRequestController {
     @PostMapping("/")
     public ResponseEntity<LoanRequest> createLoanRequest(@Valid @RequestBody LoanRequestDTO loanRequestDTO){
         LoanRequest loanRequest = loanRequestService.createLoanRequest(loanRequestDTO);
-        return ResponseEntity.ok(loanRequest);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                        .path("/{id}")                
+                        .buildAndExpand(loanRequest.getId())
+                        .toUri();
+
+        return ResponseEntity.created(location).body(loanRequest);
     }
 
     @GetMapping("/")

@@ -1,5 +1,6 @@
 package com.mahmudul.krishibandhuapi.organization;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.mahmudul.krishibandhuapi.dtos.OrganizationDTO;
 
@@ -30,8 +32,15 @@ public class OrganizationController {
 
     @PostMapping("/")
     public ResponseEntity<Organization> createOrganization(@Valid @RequestBody OrganizationDTO organizationDTO){
+        
         Organization org = organizationService.createOrganization(organizationDTO.toOrganizationEntity());
-        return ResponseEntity.ok(org);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                        .path("/{id}")
+                        .buildAndExpand(org.getId())
+                        .toUri();
+
+        return ResponseEntity.created(location).body(org);
     }
 
     @GetMapping("/")
