@@ -3,6 +3,7 @@ package com.mahmudul.krishibandhuapi.user.farmer;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mahmudul.krishibandhuapi.entities.User;
 import com.mahmudul.krishibandhuapi.loan.request.LoanRequest;
 
@@ -28,6 +29,7 @@ public class Farmer extends User {
   private Double landArea;
   
   @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
   private List<LoanRequest> loanRequests;
 
   public Farmer(

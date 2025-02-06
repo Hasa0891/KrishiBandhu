@@ -2,6 +2,9 @@ package com.mahmudul.krishibandhuapi.loan.request;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.mahmudul.krishibandhuapi.loan.offer.LoanOffer;
 import com.mahmudul.krishibandhuapi.user.farmer.Farmer;
 
@@ -30,20 +33,22 @@ public class LoanRequest {
     private Long id;
 
     @ManyToOne()
-    @JoinColumn(name = "loan_offer_id", nullable = false)
+    @JoinColumn(name = "loan_offer_id", referencedColumnName = "id")
     private LoanOffer loanOffer;
 
     @ManyToOne()
     @JoinColumn(name = "farmer_id", referencedColumnName = "id")
     private Farmer farmer;
     
+    @CreationTimestamp
     private LocalDateTime requestDate;
+    
+    @UpdateTimestamp
     private LocalDateTime updateDate;
+    
     private String status;
 
-    public LoanRequest(LocalDateTime requestDate, LocalDateTime updateDate, String status, LoanOffer loanOffer, Farmer farmer) {
-        this.requestDate = requestDate;
-        this.updateDate = updateDate;
+    public LoanRequest(String status, LoanOffer loanOffer, Farmer farmer) {
         this.status = status;
         this.loanOffer = loanOffer;
         this.farmer = farmer;

@@ -1,13 +1,19 @@
 package com.mahmudul.krishibandhuapi.loan.offer;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mahmudul.krishibandhuapi.loan.request.LoanRequest;
 import com.mahmudul.krishibandhuapi.organization.Organization;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +39,10 @@ public class LoanOffer {
     @ManyToOne()
     @JoinColumn(name = "organization_id", nullable = false)
     private Organization organization;
+
+    @OneToMany(mappedBy = "loanOffer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<LoanRequest> loanRequests;
 
     public LoanOffer(String name, String description, String terms, Double amount, Organization organization) {
         this.name = name;
