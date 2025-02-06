@@ -2,6 +2,7 @@ package com.mahmudul.krishibandhuapi.organization;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mahmudul.krishibandhuapi.loan.offer.LoanOffer;
 
 import jakarta.persistence.CascadeType;
@@ -33,6 +34,7 @@ public class Organization {
     private String contacts;
 
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<LoanOffer> loanOffers;
 
     public Organization(String name, String description, String address, String contacts) {

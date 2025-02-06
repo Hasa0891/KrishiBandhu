@@ -17,7 +17,6 @@ import com.mahmudul.krishibandhuapi.dtos.OrganizationDTO;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
 @RestController
 @RequestMapping("/organizations")
 @Validated

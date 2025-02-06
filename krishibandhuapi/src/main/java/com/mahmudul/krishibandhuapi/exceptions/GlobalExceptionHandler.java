@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.mahmudul.krishibandhuapi.exceptions.crops.CropNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.crops.CropsPriceNotFoundException;
+import com.mahmudul.krishibandhuapi.exceptions.loan.LoanOfferNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.organization.OrganizationNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.posts.PostNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException;
@@ -85,6 +86,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(OrganizationNotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleOrganizationNotFoundException(OrganizationNotFoundException ex){
+        Map<String,Object> errRS = new HashMap<>();
+        errRS.put("timestamp", LocalDateTime.now());
+        errRS.put("status", HttpStatus.NOT_FOUND.value());
+        errRS.put("error", "Not Found");
+        errRS.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errRS);
+    }
+
+    @ExceptionHandler(LoanOfferNotFoundException.class)
+    public ResponseEntity<Map<String,Object>> handleLoanOfferNotFoundException(LoanOfferNotFoundException ex){
         Map<String,Object> errRS = new HashMap<>();
         errRS.put("timestamp", LocalDateTime.now());
         errRS.put("status", HttpStatus.NOT_FOUND.value());
