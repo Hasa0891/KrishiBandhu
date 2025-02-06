@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mahmudul.krishibandhuapi.chat.message.Message;
+import com.mahmudul.krishibandhuapi.chat.room.ChatRoom;
 import com.mahmudul.krishibandhuapi.entities.User;
 import com.mahmudul.krishibandhuapi.loan.request.LoanRequest;
 
@@ -24,6 +26,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Farmer extends User {
+
   private String presentAddress;
   private String permanentAddress;
   private Double landArea;
@@ -31,6 +34,18 @@ public class Farmer extends User {
   @OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, orphanRemoval = true)
   @JsonIgnore
   private List<LoanRequest> loanRequests;
+
+  @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
+  private List<ChatRoom> chatRoomsAsSender;
+
+  @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
+  private List<ChatRoom> chatRoomsAsReceiver;
+
+  @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
+  private List<Message> messages;
 
   public Farmer(
     String username, 
@@ -53,4 +68,5 @@ public class Farmer extends User {
   public void generateFarmerUserName(){
     this.setUsername("FARMER_" + System.currentTimeMillis());
   }
+  
 }
