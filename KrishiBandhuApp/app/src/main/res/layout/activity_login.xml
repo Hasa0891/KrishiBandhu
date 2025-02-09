@@ -12,28 +12,15 @@
         android:id="@+id/appLogo"
         android:layout_width="226dp"
         android:layout_height="207dp"
-        android:layout_marginLeft="77dp"
+        android:layout_marginStart="77dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/img" />
-    <!-- Title or Header -->
-    <TextView
-        android:id="@+id/loginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="আপনার কৃষি, আপনার শক্তি🌿"
-        android:textSize="21sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginTop="280dp" />
 
-    <!-- Email Field -->
     <EditText
         android:id="@+id/emailField"
         android:layout_width="385dp"
         android:layout_height="62dp"
-        android:layout_below="@id/loginTitle"
+        android:layout_below="@id/appLogo"
         android:layout_marginTop="60dp"
         android:background="@drawable/rounded_edit_text"
         android:hint="Email"
@@ -66,7 +53,7 @@
         android:layout_below="@id/passwordField"
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_button"
-        android:text="লগইন করুন"
+        android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
@@ -79,6 +66,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Don't have an account? Create One"
-        android:textColor="@color/black" android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="15sp" />
     </RelativeLayout>

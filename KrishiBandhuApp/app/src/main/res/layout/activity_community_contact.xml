@@ -39,38 +39,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/farmer1Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="মো. আলমগীর হোসেন"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/farmer1Details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="বয়স: ৩৫, পুরুষ\nস্থান: কুমিল্লা, বাংলাদেশ"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="16sp" />
 
                     <Button
                         android:id="@+id/chatBtnFarmer1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="চ্যাট শুরু করুন"
-                        android:textSize="16sp"
                         android:layout_marginTop="12dp"
-                        android:onClick="startChat"/>
+                        android:onClick="startChat"
+                        android:text="চ্যাট শুরু করুন"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

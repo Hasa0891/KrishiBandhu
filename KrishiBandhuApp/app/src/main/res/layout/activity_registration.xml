@@ -1,85 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/img_1"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".RegistrationActivity">
-
-    <!-- App Logo -->
-    <ImageView
-        android:id="@+id/appLogo"
-        android:layout_width="226dp"
-        android:layout_height="207dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/img" />
-
-    <!-- Title or Header -->
-    <TextView
-        android:id="@+id/registrationTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="আপনার পথ, আপনার উন্নতি🌱🦓✨"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="21sp"
-        android:textStyle="bold" />
-
-    <!-- Username Field -->
-    <EditText
-        android:id="@+id/usernameField"
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_edit_text"
-        android:hint="Username"
-        android:padding="12dp"
-        android:textColor="#333333"
-        android:textColorHint="#AAAAAA"
-        android:textSize="16sp" />
-
-    <!-- Email Field -->
-    <EditText
-        android:id="@+id/emailField"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+    >
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edit_text"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="12dp"
-        android:textColor="#333333"
-        android:textColorHint="#AAAAAA"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:background="@drawable/img_1"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".RegistrationActivity">
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/passwordField"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edit_text"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColor="#333333"
-        android:textColorHint="#AAAAAA"
-        android:textSize="16sp" />
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="226dp"
+            android:layout_height="207dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/img" />
 
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_button"
-        android:text="রেজিস্টার করুন"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/emailField"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
 
-</LinearLayout>
+        <!-- Username Field -->
+        <EditText
+            android:id="@+id/usernameField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Date of Birth"
+            android:inputType="date"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/presentAddressField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Present Address : Country/City/Zip/freetext"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/permanentAddressField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Permanent Address : Country/City/Zip/freetext"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/landAreaField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Land Area"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            android:textSize="16sp" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_button"
+            android:text="Register"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,30 +1,49 @@
 package com.example.krishibandhu;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.Gravity;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MarketInformationActivity extends AppCompatActivity {
 
-    private Button btnMoreInfo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_market_information); // Ensure the XML file name matches
+        setContentView(R.layout.activity_market_information);
 
-        // Initialize the button
-        btnMoreInfo = findViewById(R.id.btnMoreInfo);
+        TableLayout tableLayout = findViewById(R.id.marketPriceTable);
 
-        // Set button click listener
-        btnMoreInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show toast message when the button is clicked
-                Toast.makeText(MarketInformationActivity.this, "আরো তথ্য আসছে।", Toast.LENGTH_SHORT).show();
-            }
-        });
+        String[][] marketPrices = {
+                {"Mango", "£2.00"},
+                {"Orange", "£1.20"},
+                {"Grapes", "£3.50"},
+                {"Paddy", "£1.50"},
+                {"Onion", "£4.50"},
+                {"Ginger", "£2.50"}
+        };
+
+        for (String[] price : marketPrices) {
+            TableRow tableRow = new TableRow(this);
+
+            TextView name = new TextView(this);
+            name.setText(price[0]);
+            name.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1));
+            name.setPadding(8, 8, 8, 8);
+
+            TextView priceView = new TextView(this);
+            priceView.setText(price[1]);
+            priceView.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1));
+            priceView.setPadding(8, 8, 8, 8);
+            priceView.setGravity(Gravity.END);
+
+            tableRow.addView(name);
+            tableRow.addView(priceView);
+
+            tableLayout.addView(tableRow);
+        }
     }
 }

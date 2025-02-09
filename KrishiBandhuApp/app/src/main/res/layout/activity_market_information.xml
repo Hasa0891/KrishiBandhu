@@ -7,135 +7,70 @@
     android:background="@drawable/img_3"
     tools:context=".MarketInformationActivity">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="বাজার তথ্য"
+        android:layout_marginTop="16dp"
+        android:text="@string/market_info"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Market Prices Section -->
     <TextView
         android:id="@+id/marketPriceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="বাজার মূল্য"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/market_prices"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/marketPrices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ধান: ৫০ টাকার কেজি\nগম: ৪০ টাকার কেজি\nপেঁয়াজ: ৬০ টাকার কেজি"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/marketPriceTitle"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Regional Market Trends Section -->
-    <TextView
-        android:id="@+id/regionalMarketTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="আঞ্চলিক বাজার প্রবণতা"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/marketPrices"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/regionalMarketTrends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="উত্তর অঞ্চলে ধানের চাহিদা বেড়ে গেছে\nদক্ষিণ অঞ্চলে পেঁয়াজের দাম বেড়েছে"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/regionalMarketTitle"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Demand Forecasts Section -->
-    <TextView
-        android:id="@+id/demandForecastsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="চাহিদার পূর্বাভাস"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/regionalMarketTrends"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/demandForecasts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ধানের চাহিদা আগামী ৭ দিন বৃদ্ধি পাবে\nপেঁয়াজের দাম আগামী সপ্তাহে স্থিতিশীল থাকবে"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/demandForecastsTitle"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Price Change Notifications Section -->
-    <TextView
-        android:id="@+id/priceChangeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="মূল্য পরিবর্তন বিজ্ঞপ্তি"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/demandForecasts"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/priceChangeAlerts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="পেঁয়াজের দাম বেড়েছে: ৬০ টাকা/কেজি\nধানের দাম কমেছে: ৫০ টাকা/কেজি"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/priceChangeTitle"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Bottom Button for More Info -->
-    <Button
-        android:id="@+id/btnMoreInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="আরো জানুন"
-        android:textSize="16sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/priceChangeAlerts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <ScrollView
+        android:id="@+id/marketPriceView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/marketPriceTitle">
+
+        <TableLayout
+            android:id="@+id/marketPriceTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:layout_marginHorizontal="5dp"
+            >
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="@string/market_price_column_name"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="8dp"
+                    android:text="@string/market_price_column_price"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

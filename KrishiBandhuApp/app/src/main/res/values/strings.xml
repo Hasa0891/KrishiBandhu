@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">KrishiBandhu</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="prices">Market Prices</string>
+    <string name="home_logo">The Official Logo of the application</string>
+    <string name="home_moto">The Farmer’s Strength, the Nation’s Wealth</string>
+    <string name="market_info">Market Info</string>
+    <string name="market_prices">Market Prices</string>
+    <string name="market_price_column_name">Name</string>
+    <string name="market_price_column_price">Price</string>
 </resources>
