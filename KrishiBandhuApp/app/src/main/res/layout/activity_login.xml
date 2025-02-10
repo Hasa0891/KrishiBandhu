@@ -30,7 +30,6 @@
         android:textColorHint="#AAAAAA"
         android:textSize="16sp" />
 
-    <!-- Password Field -->
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="383dp"
@@ -45,7 +44,6 @@
         android:textColorHint="#AAAAAA"
         android:textSize="16sp" />
 
-    <!-- Login Button -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
@@ -57,7 +55,6 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
-    <!-- Register Option -->
     <TextView
         android:id="@+id/registerOption"
         android:layout_width="wrap_content"

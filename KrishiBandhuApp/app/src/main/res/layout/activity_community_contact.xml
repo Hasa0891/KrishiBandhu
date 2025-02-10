@@ -7,34 +7,32 @@
     android:background="@drawable/img_1"
     tools:context=".CommunityContactActivity">
 
-    <!-- Title for the Community Contact Page -->
     <TextView
         android:id="@+id/communityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="     কৃষক সমাজ: অনলাইন যোগাযোগ"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Farmer Community"
+        android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- ScrollView to make the content scrollable -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:layout_marginTop="48dp">
+        android:layout_marginTop="48dp"
+        android:padding="16dp">
 
-        <!-- LinearLayout to hold each farmer's details -->
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <!-- Farmer 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +48,7 @@
                         android:id="@+id/farmer1Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="মো. আলমগীর হোসেন"
+                        android:text="Md Alamgir Hossain"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -60,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="বয়স: ৩৫, পুরুষ\nস্থান: কুমিল্লা, বাংলাদেশ"
+                        android:text="Age: 35, Male\nAddress: Cumilla, Bangladesh"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -70,172 +68,172 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:onClick="startChat"
-                        android:text="চ্যাট শুরু করুন"
+                        android:text="Start Chat"
                         android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Farmer 2 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/farmer2Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="শমসের আলী"
+                        android:text="Shamsher Ali"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/farmer2Details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="বয়স: ৪২, পুরুষ\nস্থান: রাজশাহী, বাংলাদেশ"
-                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="Age: 42, Male\nAddress: Rajshahi, Bangladesh"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="16sp" />
 
                     <Button
                         android:id="@+id/chatBtnFarmer2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="চ্যাট শুরু করুন"
-                        android:textSize="16sp"
                         android:layout_marginTop="12dp"
-                        android:onClick="startChat"/>
+                        android:onClick="startChat"
+                        android:text="Start Chat"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Farmer 3 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/farmer3Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="নুরুন্নাহার বেগম"
+                        android:text="Nurunnahar Begum"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/farmer3Details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="বয়স: ৩৫, মহিলা\nস্থান: বরিশাল, বাংলাদেশ"
-                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="Age: 35, Female\nAddress: Barishal, Bangladesh"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="16sp" />
 
                     <Button
                         android:id="@+id/chatBtnFarmer3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="চ্যাট শুরু করুন"
-                        android:textSize="16sp"
                         android:layout_marginTop="12dp"
-                        android:onClick="startChat"/>
+                        android:onClick="startChat"
+                        android:text="Start Chat"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Farmer 4 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/farmer4Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="আলী হোসেন"
+                        android:text="Ali Hosen"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/farmer4Details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="বয়স: ৫০, পুরুষ\nস্থান: চট্টগ্রাম, বাংলাদেশ"
-                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="Age: 50, Male\nAddress: Chittagong, Bangladesh"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="16sp" />
 
                     <Button
                         android:id="@+id/chatBtnFarmer4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="চ্যাট শুরু করুন"
-                        android:textSize="16sp"
                         android:layout_marginTop="12dp"
-                        android:onClick="startChat"/>
+                        android:onClick="startChat"
+                        android:text="Start Chat"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Farmer 5 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/farmer5Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="শাহীন রহমান"
+                        android:text="Shahin Rahman"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/farmer5Details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="বয়স: ৩৮, পুরুষ\nস্থান: ময়মনসিংহ, বাংলাদেশ"
-                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="Age: 38, Male\nAddress: Mymensingh, Bangladesh"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:textSize="16sp" />
 
                     <Button
                         android:id="@+id/chatBtnFarmer5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="চ্যাট শুরু করুন"
-                        android:textSize="16sp"
                         android:layout_marginTop="12dp"
-                        android:onClick="startChat"/>
+                        android:onClick="startChat"
+                        android:text="Start Chat"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

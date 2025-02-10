@@ -30,4 +30,7 @@ public class TechnicalAdviceActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onSchemesButtonClick(View view) {
+    }
 }

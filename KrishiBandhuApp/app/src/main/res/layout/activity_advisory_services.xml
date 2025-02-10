@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,85 +17,58 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/advisoryTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="পরামর্শ সেবা"
+                android:text="Consultancy Service"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
-            <!-- Weather Forecast Title -->
-            <TextView
-                android:id="@+id/weatherForecastTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="আগামী ৭ দিনের আবহাওয়া পূর্বাভাস"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginTop="16dp"/>
-
-            <!-- Weather Forecast for the Next 7 Days -->
-            <TextView
-                android:id="@+id/weatherForecast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="সোমবার: ☀️ পরিষ্কার আকাশ\nমঙ্গলবার: 🌧️ বৃষ্টি হতে পারে\nবুধবার: 🌤️ মেঘলা আকাশ\nবৃহস্পতিবার: 🌞 সূর্যের তাপ\nশুক্রবার: 🌧️ বৃষ্টি হতে পারে\nশনিবার: 🌤️ মেঘলা আকাশ\nরবিবার: ☀️ পরিষ্কার আকাশ"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:layout_marginTop="8dp"/>
-
-            <!-- Pest & Disease Control Title -->
             <TextView
                 android:id="@+id/pestControlTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="পোকামাকড় ও রোগ নিয়ন্ত্রণ"
+                android:text="Insects and Disease Control"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginTop="24dp"/>
 
-            <!-- Pest & Disease Control Tips -->
             <TextView
                 android:id="@+id/pestControlTips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="এলাকার ভিত্তিতে পোকামাকড় এবং রোগের নিয়ন্ত্রণ পদ্ধতি:\n১. মৃদু কীটনাশক ব্যবহার করুন\n২. সবুজ সার ব্যবহার করুন\n৩. মাটির স্বাস্থ্য পরীক্ষা করুন"
+                android:text="Insects and disease control mechanism based on region:\n1. Use mild insecticides\n2. Use green compost\n3. Examine soil"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="8dp"/>
 
-            <!-- Best Practices Title -->
             <TextView
                 android:id="@+id/bestPracticesTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="শ্রেষ্ঠ চাষাবাদ কৌশল"
+                android:text="Best Farming Technique"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginTop="24dp"/>
 
-            <!-- Best Practices Tips -->
             <TextView
                 android:id="@+id/bestPracticesTips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="১. সঠিক সময়ে সেচ প্রদান করুন\n২. মাটির স্বাস্থ্য পরীক্ষা করুন\n৩. পরিবেশ বান্ধব চাষাবাদ কৌশল অনুসরণ করুন"
+                android:text="1. Give water in the right time\n2. Follow environmental friendly farming technique"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginTop="8dp"/>
 
-            <!-- Button for Government and NGO Farming Schemes -->
             <Button
                 android:id="@+id/btnSchemes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="সরকারি ও এনজিও কৃষি স্কিম"
+                android:text="Government and NGO Farming Schemes"
                 android:textSize="16sp"
                 android:layout_marginTop="32dp"
                 android:layout_gravity="center"

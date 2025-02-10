@@ -1,61 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_2"
     tools:context=".NgoActivity">
 
-    <!-- ScrollView to make content scrollable -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <!-- LinearLayout to arrange the text views vertically -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Title for the Schemes -->
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="সরকারি ও এনজিও কৃষি স্কিম"
+                android:text="Government and NGO schemes"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Brief about the Government and NGO schemes -->
             <TextView
                 android:id="@+id/schemeDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="বাংলাদেশে কৃষকদের উন্নতি ও সহায়তার জন্য বিভিন্ন সরকারি এবং এনজিও কৃষি স্কিম রয়েছে। এর মধ্যে রয়েছে:"
+                android:text="There are various government and NGO agricultural schemes in Bangladesh to improve and support farmers. These include:"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- List of available schemes -->
             <TextView
                 android:id="@+id/schemesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="১. কৃষক ক্রেডিট স্কিম\n২. বীজ সহায়তা স্কিম\n৩. জাতীয় কৃষি ভর্তুকি স্কিম\n৪. ক্ষুদ্র কৃষকদের জন্য সহজ শর্তে ঋণ\n৫. জলবায়ু পরিবর্তন কর্মসূচি\n\nএগুলি কৃষকদের জন্য গুরুত্বপূর্ণ সহায়তা প্রদান করে, এবং আমাদের কৃষকদের উন্নতির জন্য বিভিন্ন প্রকল্প পরিচালনা করা হয়।"
+                android:text="1. Farmers Credit Scheme\n2. Seed Assistance Scheme\n3. National Agricultural Subsidy Scheme\n4. Soft Loans for Small Farmers\n5. Climate Change Programme\n\nThese provide important support to farmers, and various schemes are being run for the betterment of our farmers."
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Contact information for further assistance -->
             <TextView
                 android:id="@+id/contactInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="যে কৃষকরা এসব স্কিম সম্পর্কে আরও বিস্তারিত তথ্য চান, তারা নিম্নলিখিত যোগাযোগ মাধ্যমে সহায়তা পেতে পারেন:"
+                android:text="Farmers who want more detailed information about these schemes can get help through the following contacts:"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="8dp"/>
@@ -64,17 +58,16 @@
                 android:id="@+id/contactDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="কৃষি সম্প্রসারণ অধিদপ্তর: ০১৭৭৭৭৭৭৭৭৭\nজাতীয় কৃষি ব্যাংক: ০১৮২২২২২২২২"
+                android:text="Department of Agricultural Extension: 01777777777\nNational Agricultural Bank: 0182222222"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Button to Go back to Previous Activity -->
             <Button
                 android:id="@+id/btnBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ফিরে যান"
+                android:text="Go Back"
                 android:textSize="16sp"
                 android:layout_marginTop="16dp"
                 android:onClick="goBack"/>

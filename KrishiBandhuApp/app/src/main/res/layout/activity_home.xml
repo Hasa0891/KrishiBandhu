@@ -7,7 +7,6 @@
     android:background="@drawable/img_1"
     tools:context=".HomeActivity">
 
-    <!-- Logo Image at the Top -->
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="217dp"
@@ -19,12 +18,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Text Under the Logo -->
     <TextView
         android:id="@+id/underLogoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="স্বাগতম কৃষি বন্ধু অ্যাপে"
+        android:text="Welcome to Krishi Bandhu App"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -34,12 +32,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Buttons for Various Sections -->
     <Button
         android:id="@+id/marketInfoButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="বাজার তথ্য"
+        android:text="Market Information"
         android:textSize="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
@@ -52,7 +49,7 @@
         android:id="@+id/techAdviceButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="প্রযুক্তিগত পরামর্শ"
+        android:text="Blog"
         android:textSize="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
@@ -65,7 +62,7 @@
         android:id="@+id/communityButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="সদস্যদের সাথে যোগাযোগ"
+        android:text="Community"
         android:textSize="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
@@ -78,7 +75,7 @@
         android:id="@+id/financialSupportButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="আর্থিক সহায়তা"
+        android:text="Financial Help"
         android:textSize="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
@@ -91,7 +88,7 @@
         android:id="@+id/feedbackSupportButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="প্রতিক্রিয়া এবং সহায়তা"
+        android:text="Feedback and Help"
         android:textSize="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"

@@ -6,19 +6,17 @@
     android:background="@drawable/img_1"
     android:padding="16dp">
 
-    <!-- Chat Header with the name of the person you're chatting with -->
     <TextView
         android:id="@+id/chatHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="চ্যাট শুরু করুন"
+        android:text="Start Chat"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#2C3E50"
         android:gravity="center"
         android:layout_marginBottom="10dp"/>
 
-    <!-- ScrollView to display chat messages -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,11 +27,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!-- Dynamically added chat messages will go here -->
+
         </LinearLayout>
     </ScrollView>
 
-    <!-- Message Input and Send Button -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -53,7 +50,7 @@
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="বার্তা পাঠান "
+            android:text="Send Message"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
 

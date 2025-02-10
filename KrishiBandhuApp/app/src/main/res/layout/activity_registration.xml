@@ -13,7 +13,6 @@
         android:padding="16dp"
         tools:context=".RegistrationActivity">
 
-        <!-- App Logo -->
         <ImageView
             android:id="@+id/appLogo"
             android:layout_width="226dp"
@@ -22,7 +21,6 @@
             android:layout_marginTop="60dp"
             android:src="@drawable/img" />
 
-        <!-- Email Field -->
         <EditText
             android:id="@+id/emailField"
             android:layout_width="match_parent"
@@ -36,7 +34,6 @@
             android:textColorHint="#AAAAAA"
             android:textSize="16sp" />
 
-        <!-- Username Field -->
         <EditText
             android:id="@+id/usernameField"
             android:layout_width="match_parent"
@@ -89,7 +86,6 @@
             android:textColorHint="#AAAAAA"
             android:textSize="16sp" />
 
-        <!-- Password Field -->
         <EditText
             android:id="@+id/passwordField"
             android:layout_width="match_parent"
@@ -103,7 +99,6 @@
             android:textColorHint="#AAAAAA"
             android:textSize="16sp" />
 
-        <!-- Register Button -->
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"

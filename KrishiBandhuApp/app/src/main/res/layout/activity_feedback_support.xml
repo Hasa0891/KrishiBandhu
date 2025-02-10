@@ -7,159 +7,135 @@
     android:background="@drawable/img_5"
     tools:context=".FeedbackSupportActivity">
 
-    <!-- Title Text -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="সহায়তা এবং প্রতিক্রিয়া"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Help and Feedback"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Introduction Text -->
     <TextView
         android:id="@+id/introductionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="যদি আপনার কোন প্রশ্ন বা সমস্যা থাকে, আমাদের সাথে যোগাযোগ করুন। আমরা সাহায্য করতে প্রস্তুত। নীচে সমস্ত যোগাযোগের তথ্য দেওয়া হয়েছে।"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
+        android:text="If you have any question or you are facing any diffuculties, we are ready to help.You can find all the communicaton details below."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
 
-    <!-- Contact Information Heading -->
     <TextView
         android:id="@+id/contactTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="যোগাযোগের তথ্য"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Contact Information"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/introductionText"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/introductionText" />
 
-    <!-- Email Information -->
     <TextView
         android:id="@+id/emailInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ইমেল: support@krishibandhu.com"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/contactTitle"
+        android:text="Email: support@krishibandhu.com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/contactTitle" />
 
-    <!-- Phone Number Information -->
     <TextView
         android:id="@+id/phoneInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ফোন: +8801XXXXXXXXX"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/emailInfo"
+        android:text="Phone: +8801XXXXXXXXX"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/emailInfo" />
 
-    <!-- Address Information -->
     <TextView
         android:id="@+id/addressInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ঠিকানা: 123 কৃষক রোড, ঢাকা, বাংলাদেশ"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/phoneInfo"
+        android:text="Address: 123 Khamarbari, Dhaka, Bangladesh"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/phoneInfo" />
 
-    <!-- Feedback Section Title -->
     <TextView
         android:id="@+id/feedbackTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনার প্রতিক্রিয়া"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Your FeedBack"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/addressInfo"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/addressInfo" />
 
-    <!-- Feedback Description -->
     <TextView
         android:id="@+id/feedbackDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনার মূল্যবান প্রতিক্রিয়া আমাদেরকে আরো ভালো সেবা প্রদান করতে সাহায্য করবে। আপনার মন্তব্য বা পরামর্শ নীচে লিখুন।"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/feedbackTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Contact Us Section -->
-    <TextView
-        android:id="@+id/contactUsInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="আপনার প্রশ্ন বা সমর্থন সংক্রান্ত যে কোনো বিষয় আমাদের সাথে যোগাযোগ করে জানান।"
-        android:textSize="16sp"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/feedbackDescription"
+        android:text="Your valuable feedback to improve our product. Write your comments and feedback to us"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/feedbackTitle" />
 
-    <!-- Closing Text -->
     <TextView
         android:id="@+id/closingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আমাদের সাথে যোগাযোগ করার জন্য ধন্যবাদ! আমরা আপনার প্রতিক্রিয়া এবং সহায়তায় অবিরত কাজ করতে পেরে আনন্দিত।"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/contactUsInfo"
+        android:text="Thank You for contacting !"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/feedbackDescription" />
 
-    <!-- ScrollView -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/closingText"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp">
-        <!-- You can add additional content inside this if needed -->
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closingText">
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
