@@ -13,6 +13,7 @@ import com.mahmudul.krishibandhuapi.exceptions.loan.LoanOfferNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.loan.LoanRequestNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.organization.OrganizationNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.posts.PostNotFoundException;
+import com.mahmudul.krishibandhuapi.exceptions.user.UserNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.user.admin.AdminNotFoundException;
 import com.mahmudul.krishibandhuapi.exceptions.user.farmer.FarmerNotFoundException;
 
@@ -118,6 +119,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ChatRoomNotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleChatRoomNotFoundException(ChatRoomNotFoundException ex){
+        Map<String,Object> errRS = new HashMap<>();
+        errRS.put("timestamp", LocalDateTime.now());
+        errRS.put("status", HttpStatus.NOT_FOUND.value());
+        errRS.put("error", "Not Found");
+        errRS.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errRS);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleUserNotFoundException(UserNotFoundException ex){
         Map<String,Object> errRS = new HashMap<>();
         errRS.put("timestamp", LocalDateTime.now());
         errRS.put("status", HttpStatus.NOT_FOUND.value());
