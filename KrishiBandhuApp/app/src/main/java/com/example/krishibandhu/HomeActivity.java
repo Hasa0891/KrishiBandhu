@@ -13,20 +13,17 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home); // Ensure this matches your XML file name
+        setContentView(R.layout.activity_home);
 
-        // Initialize the buttons
         marketInfoButton = findViewById(R.id.marketInfoButton);
         techAdviceButton = findViewById(R.id.techAdviceButton);
         communityButton = findViewById(R.id.communityButton);
         financialSupportButton = findViewById(R.id.financialSupportButton);
         feedbackSupportButton = findViewById(R.id.feedbackSupportButton);
 
-        // Set button click listeners
         marketInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Market Information Activity
                 Intent intent = new Intent(HomeActivity.this, MarketInformationActivity.class);
                 startActivity(intent);
             }
@@ -35,7 +32,6 @@ public class HomeActivity extends AppCompatActivity {
         techAdviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Technical Advice Activity
                 Intent intent = new Intent(HomeActivity.this, TechnicalAdviceActivity.class);
                 startActivity(intent);
             }
@@ -44,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         communityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Community Contact Activity
                 Intent intent = new Intent(HomeActivity.this, CommunityContactActivity.class);
                 startActivity(intent);
             }
@@ -53,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
         financialSupportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Financial Support Activity
                 Intent intent = new Intent(HomeActivity.this, FinancialSupportActivity.class);
                 startActivity(intent);
             }
@@ -62,7 +56,6 @@ public class HomeActivity extends AppCompatActivity {
         feedbackSupportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Feedback and Support Activity
                 Intent intent = new Intent(HomeActivity.this, FeedbackSupportActivity.class);
                 startActivity(intent);
             }

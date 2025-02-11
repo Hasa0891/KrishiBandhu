@@ -22,62 +22,53 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize fields
         emailField = findViewById(R.id.emailField);
         passwordField = findViewById(R.id.passwordField);
         loginButton = findViewById(R.id.loginButton);
         registerOption = findViewById(R.id.registerOption); // Initialize register option
 
-        // Initialize Database Helper
         databaseHelper = new DatabaseHelper(this);
 
-        // Set click listener for the Login button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailField.getText().toString().trim();
                 String password = passwordField.getText().toString().trim();
 
-                // Validation checks
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Both fields are required!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                // Authenticate user
                 if (authenticateUser(email, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                    // Redirect to KnowledgeActivity
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
-                    finish(); // Close the LoginActivity
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid email or password!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        // Set click listener for the Register option
         registerOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Redirect to RegistrationActivity
                 Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(intent);
-                finish(); // Close the LoginActivity
+                finish();
             }
         });
     }
 
-    // Method to authenticate user
     private boolean authenticateUser(String email, String password) {
         Cursor cursor = databaseHelper.getUserByEmail(email);
         if (cursor != null && cursor.moveToFirst()) {
-            int passwordIndex = cursor.getColumnIndex(DatabaseHelper.COL_PASSWORD); // Use the constant here
+            int passwordIndex = cursor.getColumnIndex(DatabaseHelper.COL_PASSWORD);
             if (passwordIndex != -1) {
                 String storedPassword = cursor.getString(passwordIndex);
                 cursor.close();
-                return password.equals(storedPassword); // Compare passwords
+                return password.equals(storedPassword);
             } else {
                 cursor.close();
                 Toast.makeText(this, "Error retrieving password", Toast.LENGTH_SHORT).show();

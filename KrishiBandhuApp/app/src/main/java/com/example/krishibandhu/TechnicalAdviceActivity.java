@@ -14,17 +14,13 @@ public class TechnicalAdviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_advisory_services); // Make sure the XML file name matches
+        setContentView(R.layout.activity_advisory_services);
 
-        // Initialize the button
         btnSchemes = findViewById(R.id.btnSchemes);
 
-        // Set button click listener
         btnSchemes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Start NgoActivity when the button is clicked
                 Intent intent = new Intent(TechnicalAdviceActivity.this, NgoActivity.class);
                 startActivity(intent);
             }

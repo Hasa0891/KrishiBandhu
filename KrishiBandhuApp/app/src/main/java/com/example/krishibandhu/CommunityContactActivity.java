@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CommunityContactActivity extends AppCompatActivity {
 
-    // Declare the buttons for each farmer
     Button chatBtnFarmer1, chatBtnFarmer2, chatBtnFarmer3, chatBtnFarmer4, chatBtnFarmer5;
 
     @Override
@@ -16,54 +15,51 @@ public class CommunityContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_contact);
 
-        // Initialize the buttons
         chatBtnFarmer1 = findViewById(R.id.chatBtnFarmer1);
         chatBtnFarmer2 = findViewById(R.id.chatBtnFarmer2);
         chatBtnFarmer3 = findViewById(R.id.chatBtnFarmer3);
         chatBtnFarmer4 = findViewById(R.id.chatBtnFarmer4);
         chatBtnFarmer5 = findViewById(R.id.chatBtnFarmer5);
 
-        // Set click listeners for each button
         chatBtnFarmer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openChatActivity("মো. আলমগীর হোসেন");
+                openChatActivity("Md Alamgir Hossen");
             }
         });
 
         chatBtnFarmer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openChatActivity("শমসের আলী");
+                openChatActivity("Shamsher Ali");
             }
         });
 
         chatBtnFarmer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openChatActivity("নুরুন্নাহার বেগম");
+                openChatActivity("Nurunnahar Begum");
             }
         });
 
         chatBtnFarmer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openChatActivity("আলী হোসেন");
+                openChatActivity("Ali Hosen");
             }
         });
 
         chatBtnFarmer5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openChatActivity("শাহীন রহমান");
+                openChatActivity("Shahin Rahman");
             }
         });
     }
 
-    // Method to open the ChatActivity with farmer's name as an extra
     private void openChatActivity(String farmerName) {
         Intent intent = new Intent(CommunityContactActivity.this, ChatActivity.class);
-        intent.putExtra("farmerName", farmerName); // Send the farmer's name to the chat activity
+        intent.putExtra("farmerName", farmerName);
         startActivity(intent);
     }
 }
